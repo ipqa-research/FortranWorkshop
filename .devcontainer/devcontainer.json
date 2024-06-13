@@ -1,0 +1,109 @@
+{
+    "build": {
+        "dockerfile": "Dockerfile",
+        "context": "."
+    },
+    "postStartCommand": "bash .devcontainer/script.sh",
+    "features": {
+        "ghcr.io/devcontainers/features/common-utils:2":{
+            "installZsh": "true",
+            "username": "vscode",
+            "userUid": "1000",
+            "userGid": "1000",
+            "upgradePackages": "true"
+        },
+        "ghcr.io/devcontainers/features/python:1": "none",
+        "ghcr.io/devcontainers/features/node:1": "none",
+        "ghcr.io/devcontainers/features/git:1": {
+            "version": "latest",
+            "ppa": "false"
+        }
+    },
+	// Configure tool-specific properties.
+	"customizations": {
+		// Configure properties specific to VS Code.
+		"vscode": {
+			// Set *default* container specific settings.json values on container create.
+			"settings": {
+                "editor.rulers":[{"color": "#C0C0C0", "column": 80}],
+				"python.defaultInterpreterPath": "/usr/local/bin/python",
+                "fortran.linter.includePaths": [
+                    "${workspaceFolder}/build/gfo*"
+                ],
+                "fortran.linter.fypp.enabled": true,
+                "fortran.fortls.excludeDirectories": [
+                    "build",
+                    "doc/**"
+                ],
+                "better-comments.tags": [
+                    {
+                        "tag": "!!",
+                        "color": "#FF2D00",
+                        "strikethrough": false,
+                        "underline": false,
+                        "backgroundColor": "transparent",
+                        "bold": false,
+                        "italic": false
+                    },
+                    {
+                        "tag": "?",
+                        "color": "#3498DB",
+                        "strikethrough": false,
+                        "underline": false,
+                        "backgroundColor": "transparent",
+                        "bold": false,
+                        "italic": false
+                    },
+                    {
+                        "tag": "//",
+                        "color": "#474747",
+                        "strikethrough": true,
+                        "underline": false,
+                        "backgroundColor": "transparent",
+                        "bold": false,
+                        "italic": false
+                    },
+                    {
+                        "tag": "todo",
+                        "color": "#FF8C00",
+                        "strikethrough": false,
+                        "underline": false,
+                        "backgroundColor": "transparent",
+                        "bold": false,
+                        "italic": false
+                    },
+                    {
+                        "tag": "*",
+                        "color": "#98C379",
+                        "strikethrough": false,
+                        "underline": false,
+                        "backgroundColor": "transparent",
+                        "bold": false,
+                        "italic": false
+                    }
+                ],
+                "fortran.linter.initialize": false,
+                "fortran.formatting.findentArgs": [
+                    "--refactor_end",
+                    "-i3"
+                ],
+                "fortran.notifications.releaseNotes": false
+			},
+            "extensions": [
+                "fortran-lang.linter-gfortran",
+                "aaron-bond.better-comments",
+                "intel-corporation.oneapi-environment-configurator",
+                "eamodio.gitlens",
+                "GitHub.vscode-pull-request-github"
+              ]
+		}
+	},
+	// Use 'forwardPorts' to make a list of ports inside the container available locally.
+	// "forwardPorts": [],
+
+	// Use 'postCreateCommand' to run commands after the container is created.
+	// "postCreateCommand": "pip3 install --user -r requirements.txt",
+
+	// Set `remoteUser` to `root` to connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.
+	"remoteUser": "vscode"
+}
