@@ -36,8 +36,23 @@ es necesario (estando logeado a nuestra cuenta personal de GitHub):
 
 - Relizar un fork de este repositorio: Un fork es como una desviación del estado actual de este repositorio, pero en la cuenta personal de cada uno.
 
+Para realizar el fork solamente necesitamos tocar en "fork" en la zona superior derecha de este repositorio:
+
+![image](https://github.com/ipqa-research/FortranWorkshop/assets/24468661/c3ad71ba-f0f5-4b3b-8f6e-e7e3b3f82047)
+
+Esto redirigirá a otra página con un evidente botón verde que hay que tocar para realizar el fork. El fork
+quedará siempre disponible con el link: github.com/<tu_cuenta>/FortranWorkshop
 
 - Inicializar el CodeSpace desde el fork.
+
+Un CodeSpace es un entorno online `vscode`, que ya dejé seteado con todo lo necesario para trabajar con Fortran en general. Y con
+los recursos particulares de este Workshop.
+
+Para inicializar el CodeSpace, desde el fork tocamos en el otro evidente botón verde "code" 
+![image](https://github.com/ipqa-research/FortranWorkshop/assets/24468661/3f7c84a6-0a65-4d8b-8dea-b92c363c79ad)
+
+
+
 
 ## Que asumo que ya se sabe
 Lo que ya se vio en el [seminario de tooling de Fortran](https://github.com/ipqa-research/curso-linux/blob/main/fortran/tooling/README.md)
