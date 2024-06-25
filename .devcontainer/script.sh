@@ -9,7 +9,8 @@ sudo apt-get -y install \
     gfortran \
     libblas-dev liblapack-dev \
     gdb \
-    fzf
+    fzf \
+    libnlopt-dev
 
 # Install fortran language server, fprettify and flinter
 packages=( fortls findent flinter ford fpm fypp fprettify )
