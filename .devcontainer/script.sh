@@ -12,7 +12,7 @@ sudo apt-get -y install \
     fzf
 
 # Install fortran language server, fprettify and flinter
-packages=( fortls findent flinter ford fpm fypp )
+packages=( fortls findent flinter ford fpm fypp fprettify )
 for package in ${packages[@]}; do
     pipx install $package --force --pip-args=--pre
 done
