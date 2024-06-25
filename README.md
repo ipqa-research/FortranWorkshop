@@ -16,6 +16,19 @@ repositorio. Donde pueden seguirse durante la clase y copiar y pegar código.
 - Conceptos un poco más avanzados/"nuevos"
 - Debuggeo de código
 
+### Dia3: Presentación de librería centralizada para cálculos con ecuaciones de estado.
+- Bases de utilización
+- Elementos fundamentales (ArModel/GeModel/EquilibriumState)
+- Especificación de modelo a utilizar
+- Cálculos de propiedades residuales
+- Cálculos de equilibrios de fases
+
+### Dia3: Uso más avanzado
+- Cómo consultar la documentación para estar al día
+- Listado de modelos presentes y en desarrollo
+- Definición de un modelo nuevo propio
+- Ajuste de parámetros de un sistema binario
+
 ## Usar este Workshop desde un entorno online
 El contenido de este Workshop puede ejecutarse de manera online sin necesidad de instalar nada, 
 utilizando la funcionalidad de GitHub "CodeSpaces". Para poder tener un entorno de trabajo propio
@@ -32,3 +45,4 @@ Lo que ya se vio en el [seminario de tooling de Fortran](https://github.com/ipqa
 
 ## Bibliografía
 - FORTRAN FOR SCIENTISTS & ENGINEERS - Chapman
+- https://livebook.manning.com/book/modern-fortran/chapter-4/v-12/
