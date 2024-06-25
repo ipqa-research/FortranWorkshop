@@ -16,7 +16,7 @@ repositorio. Donde pueden seguirse durante la clase y copiar y pegar código.
 - Conceptos un poco más avanzados/"nuevos"
 - Debuggeo de código
 
-### Dia3: Presentación de librería centralizada para cálculos con ecuaciones de estado.
+### Dia2: Presentación de librería centralizada para cálculos con ecuaciones de estado.
 - Bases de utilización
 - Elementos fundamentales (ArModel/GeModel/EquilibriumState)
 - Especificación de modelo a utilizar
