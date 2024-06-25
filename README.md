@@ -60,7 +60,22 @@ Para inicializar el CodeSpace, desde el fork tocamos en el otro evidente botón 
 ![image](https://github.com/ipqa-research/FortranWorkshop/assets/24468661/3f7c84a6-0a65-4d8b-8dea-b92c363c79ad)
 
 El primer tirón puede tardar un tiempo (hasta 15min) en setearse por primera vez, así que estaría bueno que quienes usen esta
-herramienta lo hagan con tiempo antes.
+herramienta lo hagan con tiempo antes. En la última etapa de instalación se ve lo siguiente:
+
+![image](https://github.com/ipqa-research/FortranWorkshop/assets/24468661/84dd6462-1a77-44ca-aa4e-db5ef38545a0)
+
+
+Tras lo cual pueden tirar el comando
+
+```
+fpm run
+```
+
+en la terminal y si tras una ejecución el programa saluda:
+
+![image](https://github.com/ipqa-research/FortranWorkshop/assets/24468661/5c5955c6-f653-4919-a88c-4422ac8dba99)
+
+Significa que probablemente está todo ok.
 
 
 ## Que asumo que ya se sabe
