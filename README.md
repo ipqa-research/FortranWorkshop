@@ -2,7 +2,8 @@
 Workshop sobre uso de Fortran y librerías del Instituto.
 
 En este Workshop se verán conceptos medios-avanzados de Fortran, 
-principalmente 
+principalmente el uso de módulos, detalles de argumentos de procedimientos
+y como trabajar con tipos derivados. 
 
 ## Qué vamos a ver
 El workshop se divide en tres posibles días donde se verán distintas cosas. 
