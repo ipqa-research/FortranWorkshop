@@ -11,6 +11,13 @@ En todos los casos se espera que cada usuario siga las partes desde su computado
 Todo el "teórico" y las actividades se presentan en los archivos "diaX.md" en este
 repositorio. Donde pueden seguirse durante la clase y copiar y pegar código.
 
+La ejecución de código se hará mediante el gestor de paquetes `fpm`. Cada mini-programa que
+hagamos se ejecturá con el comando:
+
+```bash
+fpm run nombre_programa
+```
+
 ### [Día 1: Pongamonos al día y alineados con Fortran](dia1.md)
 - Repaso de cosas básicas de Fortran
 - Conceptos un poco más avanzados/"nuevos"
@@ -36,8 +43,40 @@ es necesario (estando logeado a nuestra cuenta personal de GitHub):
 
 - Relizar un fork de este repositorio: Un fork es como una desviación del estado actual de este repositorio, pero en la cuenta personal de cada uno.
 
+Para realizar el fork solamente necesitamos tocar en "fork" en la zona superior derecha de este repositorio:
+
+![image](https://github.com/ipqa-research/FortranWorkshop/assets/24468661/c3ad71ba-f0f5-4b3b-8f6e-e7e3b3f82047)
+
+Esto redirigirá a otra página con un evidente botón verde que hay que tocar para realizar el fork. El fork
+quedará siempre disponible con el link: github.com/<tu_cuenta>/FortranWorkshop
 
 - Inicializar el CodeSpace desde el fork.
+
+Un CodeSpace es un entorno online `vscode`, que ya dejé seteado con todo lo necesario para trabajar con Fortran en general. Y con
+los recursos particulares de este Workshop.
+
+Para inicializar el CodeSpace, desde el fork tocamos en el otro evidente botón verde "code" y de ahí el otro evidente botón verde
+"Create CodeSpace on main".
+![image](https://github.com/ipqa-research/FortranWorkshop/assets/24468661/3f7c84a6-0a65-4d8b-8dea-b92c363c79ad)
+
+El primer tirón puede tardar un tiempo (hasta 15min) en setearse por primera vez, así que estaría bueno que quienes usen esta
+herramienta lo hagan con tiempo antes. En la última etapa de instalación se ve lo siguiente:
+
+![image](https://github.com/ipqa-research/FortranWorkshop/assets/24468661/84dd6462-1a77-44ca-aa4e-db5ef38545a0)
+
+
+Tras lo cual pueden tirar el comando
+
+```
+fpm run
+```
+
+en la terminal y si tras una ejecución el programa saluda:
+
+![image](https://github.com/ipqa-research/FortranWorkshop/assets/24468661/5c5955c6-f653-4919-a88c-4422ac8dba99)
+
+Significa que probablemente está todo ok.
+
 
 ## Que asumo que ya se sabe
 Lo que ya se vio en el [seminario de tooling de Fortran](https://github.com/ipqa-research/curso-linux/blob/main/fortran/tooling/README.md)
