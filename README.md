@@ -4,11 +4,11 @@ Workshop sobre uso de Fortran y librerías del Instituto.
 En este Workshop se verán conceptos medios-avanzados de Fortran, 
 principalmente 
 
-## Pre-requisitos
-Este 
-
 ## Qué vamos a ver
-El workshop se divide en tres posibles días donde se verán distintas cosas
+El workshop se divide en tres posibles días donde se verán distintas cosas. 
+En todos los casos se espera que cada usuario siga las partes desde su computadora.
+Todo el "teórico" y las actividades se presentan en los archivos "diaX.md" en este
+repositorio. Donde pueden seguirse durante la clase y copiar y pegar código.
 
 ### [Día 1: Pongamonos al día y alineados con Fortran](dia1.md)
 - Repaso de cosas básicas de Fortran
