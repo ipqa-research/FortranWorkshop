@@ -11,6 +11,13 @@ En todos los casos se espera que cada usuario siga las partes desde su computado
 Todo el "teórico" y las actividades se presentan en los archivos "diaX.md" en este
 repositorio. Donde pueden seguirse durante la clase y copiar y pegar código.
 
+La ejecución de código se hará mediante el gestor de paquetes `fpm`. Cada mini-programa que
+hagamos se ejecturá con el comando:
+
+```bash
+fpm run nombre_programa
+```
+
 ### [Día 1: Pongamonos al día y alineados con Fortran](dia1.md)
 - Repaso de cosas básicas de Fortran
 - Conceptos un poco más avanzados/"nuevos"
