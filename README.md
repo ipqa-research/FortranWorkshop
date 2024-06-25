@@ -1,15 +1,19 @@
 # FortranWorkshop
-Workshop sobre uso de un entorno básico de Fortran.
+Workshop sobre uso de Fortran y librerías del Instituto.
+
+En este Workshop se verán conceptos medios-avanzados de Fortran, 
+principalmente 
 
 ## Pre-requisitos
 Este 
 
 ## Qué vamos a ver
+El workshop se divide en tres posibles días donde se verán distintas cosas
+
+### [Día 1: Pongamonos al día y alineados con Fortran](dia1.md)
 - Repaso de cosas básicas de Fortran
 - Conceptos un poco más avanzados/"nuevos"
-  - Tipos (qué ventaja me dan)
 - Debuggeo de código
-- Instalar
 
 ## Usar este Workshop desde un entorno online
 El contenido de este Workshop puede ejecutarse de manera online sin necesidad de instalar nada, 
