@@ -48,10 +48,12 @@ quedará siempre disponible con el link: github.com/<tu_cuenta>/FortranWorkshop
 Un CodeSpace es un entorno online `vscode`, que ya dejé seteado con todo lo necesario para trabajar con Fortran en general. Y con
 los recursos particulares de este Workshop.
 
-Para inicializar el CodeSpace, desde el fork tocamos en el otro evidente botón verde "code" 
+Para inicializar el CodeSpace, desde el fork tocamos en el otro evidente botón verde "code" y de ahí el otro evidente botón verde
+"Create CodeSpace on main".
 ![image](https://github.com/ipqa-research/FortranWorkshop/assets/24468661/3f7c84a6-0a65-4d8b-8dea-b92c363c79ad)
 
-
+El primer tirón puede tardar un tiempo (hasta 15min) en setearse por primera vez, así que estaría bueno que quienes usen esta
+herramienta lo hagan con tiempo antes.
 
 
 ## Que asumo que ya se sabe
