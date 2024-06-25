@@ -28,3 +28,7 @@ es necesario (estando logeado a nuestra cuenta personal de GitHub):
 
 ## Que asumo que ya se sabe
 Lo que ya se vio en el [seminario de tooling de Fortran](https://github.com/ipqa-research/curso-linux/blob/main/fortran/tooling/README.md)
+
+
+## Bibliografía
+- FORTRAN FOR SCIENTISTS & ENGINEERS - Chapman
