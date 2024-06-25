@@ -7,6 +7,9 @@
 - Tipos derivados
 
 ## Módulos
+![image](https://github.com/ipqa-research/FortranWorkshop/assets/24468661/a167257d-b058-417c-809d-704e45a8be6f)
+
+
 Desde la existencia de Fortran90 nuestro código puede estructurarse en una
 lógica de módulos. Los módulos en Fortran pueden pensarse como una caja donde
 tenemos un conjunto de variables y rutinas que pueden reutilizarse.
