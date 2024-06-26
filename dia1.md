@@ -226,5 +226,72 @@ factores no altera el producto.
 > resolver.
 
 ## Tipos derivados (objetos)
+Así como ya vimos que usar módulos nos permite organizar mejor nuestro código, ahora
+vamos a un paso más a hablar de tipos derivados. En Fortran existen los tipos intrínsecos
+(`real`, `integer`, `etc`). Los tipos derivados vendrían a ser un tipo extra definido
+por el usuario, que permite encapsular distintos valores (_atributos_) y comportamientos (_métodos_)
 
-## Trabajar con dependencias
+Arranquemos con un ejemplo
+
+Llega una rutina horrible que recibe mil argumentos al momento de escribirla
+```fortran
+subroutine foo(x, a, b, c, d, e, f, y)
+    real, intent(in) :: x
+    real, intent(in) :: a, b, c, d, e, f
+    real, intent(out) :: y
+    y = a * b *x + c*x**2 + e * f
+end subroutine
+```
+
+Si bien este ejemplo es dentro de todo minimalista, creo que podemos imaginarnos como cosas
+de este estilo se vuelven ilegibles o molestas de trabajar. En este ejemplo podemos ver claramente
+que se trata de alguna función que usa un conjunto de parámetros. Tranquilamente podríamos encapsular estos
+parámetros en una única variable, no?
+
+```fortran
+type :: Parameters
+    real :: a, b, c, d, e, f
+end type
+
+subroutine foo(x, params, y)
+    real, intent(in) :: x
+    real, intent(in) :: parameters
+    real, intent(out) :: y
+
+    y = params%a * params%b *x + params%c*x**2 + params%e * params%f
+end subroutine
+```
+
+La ecuación en si quizás quedó un poquito más fea (ya vamos ver como se arregla eso), pero 
+no podemos negar que el uso de la rutina quedó más estructurado. De paso va a ser más dificil
+confundirse en cuanto a qué términos se pasan a la rutina (recibe un conjunto de parámetros y listo).
+
+Bueno, y qué era lo que me refería como comportamiento?
+
+```fortran
+type :: Parameters
+    real :: a, b, c, d, e, f
+contains
+    procedure :: foo
+end type
+
+subroutine foo(params, x, y)
+    real, intent(in) :: x
+    real, intent(in) :: parameters
+    real, intent(out) :: y
+
+    y = params%a * params%b *x + params%c*x**2 + params%e * params%f
+end subroutine
+
+program main
+    type(Parameters) :: regresion
+    regression = Parameters(2.4, 5.3, 3.6, 3.4, 2.1)
+    call regression%foo(x, y)
+end program
+```
+
+La persona que está usando nuestros códigos solo ve esta ultima parte.
+
+
+
+
