@@ -54,3 +54,14 @@ en un módulo `dia1`.
 ## Namelist
 
 ## Tipos derivados
+1. Implementar un tipo derivado que guarde los parámetros del modelo de de
+   actividad de Magules y una rutina que calcule la actividad de una mezcla
+   en función de la fracción molar $x_1$
+
+- $\ln \gamma_1 = [A_{12} + 2(A_{21} - A{12})x_1]x_2^2$
+- $\ln \gamma_2 = [A_{21} + 2(A_{12} - A{21})x_2]x_1^2$
+
+2. A ese mismo tipo derivado:
+   - Agregar el cálculo de actividad como un método del mismo.
+   - La presión de burbuja: $P = \gamma_1 * x_1 * P_1 + gamma_2 * x_2 * P_2$
+     > Nótese que $P_1$ y $P_2$ pueden incluirse como atributos del tipo derivado
