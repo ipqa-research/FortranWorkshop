@@ -87,3 +87,4 @@ Lo que ya se vio en el [seminario de tooling de Fortran](https://github.com/ipqa
 - [FORTRAN FOR SCIENTISTS & ENGINEERS - Chapman](https://books.google.com.ar/books?id=OQhBMQAACAAJ)
 - [Modern Fortran](https://livebook.manning.com/book/modern-fortran/chapter-4/v-12/)
 - [Modern Fortran Explained](https://global.oup.com/academic/product/modern-fortran-explained-9780198876588?q=Fortran%202023&lang=en&cc=de)
+- https://github.com/Fortran-FOSS-Programmers/Best_Practices
