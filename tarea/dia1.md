@@ -63,5 +63,5 @@ en un módulo `dia1`.
 
 2. A ese mismo tipo derivado:
    - Agregar el cálculo de actividad como un método del mismo.
-   - La presión de burbuja: $P = \gamma_1 * x_1 * P_1 + gamma_2 * x_2 * P_2$
+   - La presión de burbuja: $P = \gamma_1 x_1 P_1 + \gamma_2 x_2 P_2$
      > Nótese que $P_1$ y $P_2$ pueden incluirse como atributos del tipo derivado
