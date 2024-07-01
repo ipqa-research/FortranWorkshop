@@ -13,9 +13,9 @@ contains
         logical, intent(in) :: failed
         
         if (failed) then
-            print *, fg_color_red // str // style_reset
+            print *,  str, fg_color_red // ": [ Wrong ✕ ]" // style_reset
         else
-            print *, str // fg_color_green //  ": [Aproved ✓]"// style_reset
+            print *, str, fg_color_green //  ": [ Aproved ✓ ]"// style_reset
         end if
     end subroutine
 end module
