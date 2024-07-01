@@ -1,19 +1,28 @@
 # Workshop Fortran: Conceptos medios-altos de Fortran
 
 ## Contenido
-- Modulos
+- Módulos
 - Opciones de argumentos en procedimientos
 - Arrays allocatables
+- Namelist
 - Tipos derivados
 
 ## Módulos
 ![image](https://github.com/ipqa-research/FortranWorkshop/assets/24468661/a167257d-b058-417c-809d-704e45a8be6f)
 
+La mayoría de los presentes puede darse cuenta que significa esto:
+
+```fortran
+  SUBROUTINE F(X, Y)
+  COMMON / PARAMETERS / A, B, C
+  Y = A*X + B/X + C
+  END SUBROUTINE
+```
 
 Desde la existencia de Fortran90 nuestro código puede estructurarse en una
-lógica de módulos. Los módulos en Fortran pueden pensarse como una caja donde
-tenemos un conjunto de variables y rutinas que pueden reutilizarse.
-Un módulo se define como:
+lógica de módulos.
+Los módulos en Fortran pueden pensarse como una caja donde tenemos un conjunto
+de variables y rutinas que pueden reutilizarse. Un módulo se define como:
 
 ```fortran
 module nombre_modulo
@@ -119,15 +128,28 @@ end subroutine
 > asumidas
 
 ### Argumentos opcionales
-A veces no queremos utilizar todas las variables de un procedimiento. Usar 
+A veces no queremos utilizar todas las variables de un procedimiento. Así
+que podemos darle la opción de `optional` a nuestros argumentos.
 
-## Interfaces
+```fortran
+subroutine f(x, y, z)
+  real, intent(in) :: x
+  real, optional, intent(in) :: y
+  real, intent(out) :: z
+
+  if (present(y)) then
+    z = x*y
+  else
+    z = x/2
+  end if
+end subroutine
+```
 
 ## Allocables
 Siempre odiamos que hay que definir el tamaño de los arrays, o a veces hay casos
-que en que nos gustaría poder variar la dimensión de uno. Desde Fortran90 podemos
-definiendolos como `allocatables` (`allocatable` significa que su lugar y/o tamaño
-en memoria puede variar)
+que en que nos gustaría poder variar la dimensión de uno. 
+Desde Fortran90 podemos definiendolos como `allocatables` (`allocatable`
+significa que su lugar y/o tamaño en memoria puede variar)
 
 ```fortran
 program main
@@ -215,21 +237,25 @@ Y listo! Ya se leyó, no fue necesario escribir una lógica rebuscada. Y, a
 diferencia de métodos convencionales de lectura/escritura, aquí el orden de los
 factores no altera el producto.
 
-> **Actividad**: 
+> **Actividad**:
 >
 > - Agregar la lógica de lectura de `mi_otro_namelist`.
 > - Modificar las variables y escribir ambos namelist en un archivo `salida.nml`
 
 
-> gotchas: Cuando trabajamos con cosas de dimensión variable hay que tener en
-> cuenta algunos detalles y puede ocasionar errores difíciles de preveer y
-> resolver.
+> Detalles:
+> - Cuando trabajamos con cosas de dimensión variable hay que tener en
+>   cuenta algunos detalles y puede ocasionar errores difíciles de preveer y
+>   resolver.
+> - Por algún motivo es necesario terminar con una línea vacía al final de 
+>   los archivos nml
 
 ## Tipos derivados (objetos)
-Así como ya vimos que usar módulos nos permite organizar mejor nuestro código, ahora
-vamos a un paso más a hablar de tipos derivados. En Fortran existen los tipos intrínsecos
-(`real`, `integer`, `etc`). Los tipos derivados vendrían a ser un tipo extra definido
-por el usuario, que permite encapsular distintos valores (_atributos_) y comportamientos (_métodos_)
+Así como ya vimos que usar módulos nos permite organizar mejor nuestro código,
+ahora vamos a un paso más a hablar de tipos derivados. En Fortran existen los
+tipos intrínsecos (`real`, `integer`, `etc`). Los tipos derivados vendrían a
+ser un tipo extra definido por el usuario, que permite encapsular distintos
+valores (_atributos_) y comportamientos (_métodos_)
 
 Arranquemos con un ejemplo
 
@@ -243,9 +269,10 @@ subroutine foo(x, a, b, c, d, e, f, y)
 end subroutine
 ```
 
-Si bien este ejemplo es dentro de todo minimalista, creo que podemos imaginarnos como cosas
-de este estilo se vuelven ilegibles o molestas de trabajar. En este ejemplo podemos ver claramente
-que se trata de alguna función que usa un conjunto de parámetros. Tranquilamente podríamos encapsular estos
+Si bien este ejemplo es dentro de todo minimalista, creo que podemos
+imaginarnos como cosas de este estilo se vuelven ilegibles o molestas de
+trabajar. En este ejemplo podemos ver claramente que se trata de alguna función
+que usa un conjunto de parámetros. Tranquilamente podríamos encapsular estos
 parámetros en una única variable, no?
 
 ```fortran
@@ -262,9 +289,10 @@ subroutine foo(x, params, y)
 end subroutine
 ```
 
-La ecuación en si quizás quedó un poquito más fea (ya vamos ver como se arregla eso), pero 
-no podemos negar que el uso de la rutina quedó más estructurado. De paso va a ser más dificil
-confundirse en cuanto a qué términos se pasan a la rutina (recibe un conjunto de parámetros y listo).
+La ecuación en si quizás quedó un poquito más fea (ya vamos ver como se arregla
+eso), pero no podemos negar que el uso de la rutina quedó más estructurado. De
+paso va a ser más dificil confundirse en cuanto a qué términos se pasan a la
+rutina (recibe un conjunto de parámetros y listo).
 
 Bueno, y qué era lo que me refería como comportamiento?
 
@@ -285,13 +313,10 @@ end subroutine
 
 program main
     type(Parameters) :: regresion
-    regression = Parameters(2.4, 5.3, 3.6, 3.4, 2.1)
+    regression = Parameters(a=2.4, b=5.3, c=3.6, d=3.4, f=2.1)
     call regression%foo(x, y)
 end program
 ```
 
 La persona que está usando nuestros códigos solo ve esta ultima parte.
-
-
-
 
