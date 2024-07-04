@@ -282,7 +282,7 @@ end type
 
 subroutine foo(x, params, y)
     real, intent(in) :: x
-    real, intent(in) :: parameters
+    type(Parameters) :: params
     real, intent(out) :: y
 
     y = params%a * params%b *x + params%c*x**2 + params%e * params%f
@@ -304,8 +304,8 @@ contains
 end type
 
 subroutine foo(params, x, y)
+    class(Parameters) :: params
     real, intent(in) :: x
-    real, intent(in) :: parameters
     real, intent(out) :: y
 
     y = params%a * params%b *x + params%c*x**2 + params%e * params%f
