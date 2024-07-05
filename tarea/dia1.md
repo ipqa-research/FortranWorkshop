@@ -20,10 +20,10 @@ en un módulo `dia1`.
    - Una variable llamada `x` con el valor de precisión del módulo constantes
      y que empiece con un valor predeterminado de `5`.
      > Definición de precisión `real(pr)`
-   - Una subroutina `set_x(x)` que asigne el valor de la variable `x` del módulo
-     a la variable `x` de entrada de la rutina.
-   - Una subroutina `get_x(x)` que devuelva el valor de la variable `x` del
-     módulo a la variable `x` de salida de la rutina.
+   - Una subroutina `set_x(var)` que asigne el valor de la variable `x` del módulo
+     a la variable `var` de entrada de la rutina.
+   - Una subroutina `get_x(var)` que devuelva el valor de la variable `x` del
+     módulo a la variable `var` de salida de la rutina.
 
 3. Finalmente, generar un módulo `dia_1` que junte a todos los módulos
    definidos.
