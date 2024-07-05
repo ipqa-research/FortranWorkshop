@@ -18,9 +18,12 @@ en un módulo `dia1`.
 2. Crear otro módulo (que use el módulo anterior) llamado `dia_1_variables` 
    e incluya:
    - Una variable llamada `x` con el valor de precisión del módulo constantes
-     y que empiece con un valor predeterminado de `5`. 
-   - Una subroutina `get_x(x)` que asigne el valor de la variable `x` del módulo
-     a la variable `x` de salida de la rutina.
+     y que empiece con un valor predeterminado de `5`.
+     > Definición de precisión `real(pr)`
+   - Una subroutina `set_x(x)` que asigne el valor de la variable `x` del módulo
+     a la variable `x` de entrada de la rutina.
+   - Una subroutina `get_x(x)` que devuelva el valor de la variable `x` del
+     módulo a la variable `x` de salida de la rutina.
 
 3. Finalmente, generar un módulo `dia_1` que junte a todos los módulos
    definidos.
