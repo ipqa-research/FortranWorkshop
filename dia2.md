@@ -7,7 +7,6 @@ general.
 En esta presentación vamos a ver algunas bases fundamentales para luego ir 
 de lleno a la librería en sí.
 
-
 ## Tipos principales
 
 En `yaeos` hay (por ahora) tres tipos fundamentales para su uso
@@ -48,3 +47,8 @@ Por el momento yaeos permite el cálculo de propiedades residuales y equilibrio 
 ## Mapa general
 
 ![image](https://github.com/user-attachments/assets/4b6a4ff8-2a36-45e4-9768-34c7ea32dab2)
+
+
+# Cálculos
+Vamos a trabajar ejecutando los ejemplos mismos de la librería:
+https://github.com/ipqa-research/yaeos/tree/main/example
