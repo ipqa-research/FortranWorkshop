@@ -14,3 +14,8 @@ En `yaeos` hay (por ahora) tres tipos fundamentales para su uso
 
 - `ArModel`: Modelos de energía residual de Helmholtz
 - `GeModel`: Modelos de energía de Gibbs de exceso
+- `EquilibriumState`: Descripción de un estado en equilibrio bifásico
+
+## Mapa general
+
+![image](https://github.com/user-attachments/assets/4b6a4ff8-2a36-45e4-9768-34c7ea32dab2)
