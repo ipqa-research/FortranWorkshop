@@ -23,7 +23,7 @@ fpm run nombre_programa
 - Conceptos un poco más avanzados/"nuevos"
 - Debuggeo de código
 
-### Dia2: Presentación de librería centralizada para cálculos con ecuaciones de estado.
+### [Dia2: Presentación de librería centralizada para cálculos con ecuaciones de estado.](dia2.md)
 - Bases de utilización
 - Elementos fundamentales (ArModel/GeModel/EquilibriumState)
 - Especificación de modelo a utilizar
