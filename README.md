@@ -83,6 +83,7 @@ Lo que ya se vio en el [seminario de tooling de Fortran](https://github.com/ipqa
 
 
 ## Bibliografía
+- [FortranTips](https://zmoon.github.io/FortranTipBrowser/tips/026.html)
 - [Repositorio de distintos códigos Fortran disponibles](https://github.com/Beliavsky/Fortran-code-on-GitHub)
 - [Web de Fortran-lang](https://fortran-lang.org/learn/)
 - [FORTRAN FOR SCIENTISTS & ENGINEERS - Chapman](https://books.google.com.ar/books?id=OQhBMQAACAAJ)
