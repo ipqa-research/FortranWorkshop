@@ -77,3 +77,37 @@ parámetros de interacción entre grupos principales.
 
 Si y lo vamos a ver de a poco.
 
+
+### Definicion de la clase `GeGCModelParameters`
+
+- Documentación  
+[https://ipqa-research.github.io/yaeos/module/yaeos__models_ge_group_contribution_model_parameters.html](https://ipqa-research.github.io/yaeos/module/yaeos__models_ge_group_contribution_model_parameters.html)
+
+- Código  
+[https://github.com/ipqa-research/yaeos/blob/main/src/models/excess_gibbs/group_contribution/model_parameters.f90](https://github.com/ipqa-research/yaeos/blob/main/src/models/excess_gibbs/group_contribution/model_parameters.f90)
+
+
+### Funcion constructora `GeGCModelParameters` -> `UNIFACParameters`
+
+- Código  
+[https://github.com/ipqa-research/yaeos/blob/main/src/models/excess_gibbs/group_contribution/unifac_parameters.f90](https://github.com/ipqa-research/yaeos/blob/main/src/models/excess_gibbs/group_contribution/unifac_parameters.f90)
+
+Ejemplo:
+
+```fortran
+use yaeos__models_ge_group_contribution_unifac_parameters, only: UNIFACParameters
+use yaeos__models_ge_group_contribution_model_parameters, only: GeGCModelParameters
+
+type(GeGCModelParameters) :: parameters
+
+parameters = UNIFACParameters()
+
+! Get the subgroups i:1, j:16 interaction parameter aij (CH3-H2O)
+! with maingroups 1 and 7 respectively.
+print *, parameters%get_subgroups_aij(1, 16) ! prints: 1318.0000
+```
+
+### Analisis del código de la Implementación de UNIFAC
+- Código
+
+[https://github.com/ipqa-research/yaeos/blob/main/src/models/excess_gibbs/group_contribution/unifac.f90](https://github.com/ipqa-research/yaeos/blob/main/src/models/excess_gibbs/group_contribution/unifac.f90)
