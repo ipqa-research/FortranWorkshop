@@ -27,6 +27,7 @@ para $G^E$.
 
 ## Recordando `ArModel`
 ```fortran
+
 type, abstract, extends(BaseModel) :: ArModel
     character(len=:), allocatable :: name !! Name of the model
 contains
@@ -265,4 +266,100 @@ contains
         v0 = sum(n * self%b) / sum(n)
     end function
 end module
+```
+
+## Ajuste de parámetros
+Con `yaeos` se incluye un módulo de optimización, aunque en etapas más iniciales
+de desarrollo que el resto de las cosas...
+
+Toda la lógica de ajuste de parámetros se resume en un tipo `FittingProblem`, 
+que se modifica según la necesidad del caso particular a optimizar.
+
+```fortran
+type, abstract :: FittingProblem
+    real(pr) :: solver_tolerance = 1e-9_pr
+    real(pr), allocatable :: parameter_step(:)
+    class(ArModel), allocatable :: model
+
+    type(EquilibriumState), allocatable :: experimental_points(:)
+    logical :: verbose = .false.
+contains
+    procedure(model_from_X), deferred :: get_model_from_X
+end type FittingProblem
+```
+
+Esencialmente, en el tipo se guardan:
+    - Configuraciones generales de optimización, como la tolerancia.
+    - El modelo a optimizar.
+    - Los datos experimentales a ajustar.
+    - Una subroutina que actualiza el modelo a ajustar según el vector `X`
+      de parámetros.
+
+### Ajustar kij
+
+```fortran
+use yaeos__fiting, only: FitKijLij, optimize
+type(FitKijLij) :: problem
+type(EquilibriumState), allocatable :: experimental_points(:)
+class(ArModel) :: model
+real(pr) :: error
+
+!... se leen los datos experimentales en algun lado
+
+!... se setea el modelo en algun lado (PR76, SRK, lo que sea)
+
+problem%experimental = experimental_points
+problem%model = model
+
+problem%fit_kij = .true.
+problem%fit_lij = .false.
+
+error = optimize(X, problem)
+```
+
+```fortran
+! parte de src/fitting/fit_kij_lij.f90
+
+type, extends(FittingProblem) :: FitKijLij
+    logical :: fit_lij = .false. !! Fit the \(l_{ij}\) parameter
+    logical :: fit_kij = .false. !! Fit the \(k_{ij}\) parameter
+contains
+    procedure :: get_model_from_X => model_from_X
+end type FitKijLij
+
+contains
+
+   subroutine model_from_X(problem, X)
+      use yaeos, only: R, RKPR, PengRobinson78, ArModel, QMR, CubicEoS
+      real(pr), intent(in) :: X(:)
+      class(FitKijLij), intent(in out) :: problem
+      real(pr) :: kij(nc, nc), lij(nc, nc)
+
+      ! En base al vector de parametros defino k12 y l12
+      kij = 0
+      kij(1, 2) = X(1)
+      kij(2, 1) = kij(1, 2)
+
+      lij = 0
+      lij(1, 2) = X(2)
+      lij(2, 1) = X(2)
+
+      ! Esta parte es fea a la vista, pero básicamente es para asegurarse que
+      ! el modelo tiene reglas de mezclado QMR.
+
+      associate(model => problem%model)
+      select type (model)
+       class is (CubicEoS)
+         associate (mr => model%mixrule)
+            select type(mr)
+             class is (QMR)
+
+               if (problem%fit_kij) mr%k = kij
+               if (problem%fit_lij) mr%l = lij
+
+            end select
+         end associate
+      end select
+      end associate
+   end subroutine
 ```
